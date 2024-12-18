@@ -12,21 +12,21 @@ class Solution:
         for i in range(a-1):
             current_1 = current_1.next
 
-        # Pointer Two to track where the new list will point to, , aka 'b'
+        # Pointer Two to track where the new list will point to, aka 'b'
         current_2 = current_1
 
         for i in range(b - a + 2):
             current_2 = current_2.next
 
         # Pointer Three to track the tail of list2
-        current_3 = list2
+        tail_2 = list2
 
-        while current_3.next:
-            current_3 = current_3.next
+        while tail_2.next:
+            tail_2 = tail_2.next
 
         # Update the pointer next accordingly to merge the list
         current_1.next = list2
-        current_3.next = current_2
+        tail_2.next = current_2
 
         # Return the head of list one
         return list1
